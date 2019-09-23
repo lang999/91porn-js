@@ -9,7 +9,7 @@
     <van-col span="19">
       <van-grid :column-num="8" v-if="videos.length > 0">
         <van-grid-item v-for="(item,key) in this.videos" :key="key">
-          <img style="width: 100%" :src="item.imgv_url" />
+          <img style="width: 100%" :src="item.image" />
           {{ item.title }}
         </van-grid-item>
       </van-grid>
@@ -41,9 +41,24 @@ export default {
     switchCatalog() {
 
       API.getList(this.param).then(res => {
-        console.log(res.data)
-        this.videos = res.data.videoshow.videos
-        console.log(this.videos)
+        let html = document.createElement('html');
+        console.log( res.data)
+        html.innerHTML = res.data;
+        let videobox = html.querySelectorAll('#videobox .listchannel')
+        let videos = []
+        videobox.forEach(element => {
+          let item = {},
+          link = element.querySelector('a').getAttribute('href'),
+          image = element.querySelector('a img')
+          item = {
+            link,
+            image: image.getAttribute('src'),
+            title: image.getAttribute('title')
+          }
+          videos.push(item)
+        });
+        this.videos = videos
+        html = null
       })
     }
   }

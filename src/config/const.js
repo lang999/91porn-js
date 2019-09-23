@@ -1,7 +1,7 @@
 export default {
   //http://v.baidu.com/commonapi/tvplay2level/?filter=true&type=&area=%E9%9F%A9%E5%9B%BD&actor=&start=&complete=&order=hot&pn=1&rating=&prop=&channel=tvplay
-  API_BASE: 'http://v.baidu.com/',
-  API_LIST: '/commonapi/tvplay2level/?filter=true&type=&area=%E9%9F%A9%E5%9B%BD&actor=&start=&complete=&order=hot&pn=1&rating=&prop=&channel=tvplay',
+  API_BASE: 'https://626.workarea3.live',
+  API_LIST: '/video.php',
   API_CATALOG: [{
       catelog: "",
       value: "全部"
