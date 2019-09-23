@@ -8,7 +8,8 @@ import {
   Row, Col,
   Tabs,Tab,
   Sidebar, SidebarItem,
-  Grid,GridItem
+  Grid,GridItem,
+  Dialog
 } from 'vant'
 import 'vant/lib/index.css'
 Vue
@@ -21,4 +22,5 @@ Vue
 .use(SidebarItem)
 .use(Grid)
 .use(GridItem)
+.use(Dialog)
 Vue.prototype.$toast = Toast
