@@ -12,7 +12,7 @@ npm install
 npm run dev
 
 # build electron application for production
-npm run build
+npm run build:{win32|darwin|linux|web}
 
 
 # lint all JS/Vue component files in `src/`
